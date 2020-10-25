@@ -155,20 +155,9 @@ input{
 		border-radius: 10px;
 		padding-left: 10px;
 	}
-	#load{
-		height: 100vh;
-		width: 100%;
-		background: #001111 url('https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif') no-repeat center;
-		z-index: 999;
-		position: fixed;
-		/* background-repeat: no-repeat; display: grid; place-items: center; */
-	}
 	</style>
 
-    <body onload="myfun()">
-		<div id="load">
-			
-		</div>
+    <body>
 
         <!-- Website Title -->
     	<div class="containe">
@@ -179,22 +168,7 @@ input{
     	</div>
 
         <div class="ml-container">
-    		<form action="/" method="POST">
-                <input type="text" name="age" placeholder="Age in Days">
-						<input type="text" name="gender" placeholder="Gender (1 for male and 2 for female)"> <br>
-						<input type="text" name="height" placeholder="Height in cm">
-						<input type="text" name="weight" placeholder="Weight in Kg"><br>
-						<input type="text" name="ap_hi" placeholder="Systolic Blood Pressure in mm">
-						<input type="text" name="ap_lo" placeholder="Diastolic Blood Pressure in mm"><br>
-						<input type="text" name="cholesterol" placeholder="Cholesterol Level(eg- 1,2 or 3">
-						<input type="text" name="gluc" placeholder="Glucose Level(eg- 1,2 or 3)"><br>
-						<input type="text" name="smoke" placeholder="Smoking (1 for yes and 0 for no)">
-						<input type="text" name="alco" placeholder="Alcohol (0 for no and 1 for yes)"><br>
-						<input type="text" name="active" placeholder="Active (1 for yes and 0 for no)">
-						<input type="text" name="bmi" placeholder="BMI"><br>
-
-        		<input type="submit" class="button btn  btn-secondary" value="Predict">
-			</form>
+            <h1 style="font-family: 'Sansita Swashed', cursive; letter-spacing: 3px; font-weight: bold; display: grid; place-items: center; color: coral;">{{result}}</h1>
 		</div>
 
 		<!-- Footer -->
@@ -206,11 +180,5 @@ input{
            <p class='footer-description'>Made by Shivansh Singh.</p>
        </div>
 
-	</body>
-	<script>
-		var load = document.getElementById("load");
-		function myfun(){
-			load.style.display = "none";
-		}
-	</script>
+    </body>
 </html>

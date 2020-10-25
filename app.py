@@ -31,10 +31,11 @@ def marks():
 		result = model.predict([[age, gender, height, weight, ap_hi, ap_lo, cholesterol, gluc, smoke, alco, active, bmi]])
 
 		if result[0] == 1:
-			return render_template("index.html", result = "Ahhh..You have Cardio-Vascular Disease" )
+			return render_template("index1.html", result = "Ahhh..You have Cardio-Vascular Disease" )
 		else:
-			return render_template("index.html", result = "You are Disease-free!! :) :)")
+			return render_template("index2.html", result = "You are Disease-free!! :) :)")
 	
+
 
 if __name__ == '__main__':
 	app.run(debug = True)
