@@ -155,20 +155,53 @@ input{
 		border-radius: 10px;
 		padding-left: 10px;
 	}
-	#load{
-		height: 100vh;
-		width: 100%;
-		background: #001111 url('https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif') no-repeat center;
+	.main{
+		height: 100%; width: 100vw;
+		background-color: black;
+		position: absolute;
 		z-index: 999;
-		position: fixed;
-		/* background-repeat: no-repeat; display: grid; place-items: center; */
+		display: grid; place-items: center;
+	}
+	.sub-main{
+		height: 230px; width: 230px;
+		background-color: black;
+		display: grid; place-items: center;
+		border-right: 5px solid white;
+		border-left: 5px solid white;
+		border-radius: 50%;
+		animation: rot linear 3s infinite;
+	}
+	.rot{
+		animation: rot1 linear 3s infinite;
+		color: white;
+		font-family: 'Ubuntu', sans-serif;
+	}
+	@keyframes rot1{
+		0%{
+			transform: rotate(360deg);
+		}
+		100%{
+			transform: rotate(0deg);
+		}
+	}
+	@keyframes rot{
+		0%{
+			transform: rotate(0deg);
+		}
+		100%{
+			transform: rotate(360deg);
+		}
 	}
 	</style>
+			<div id="load" class="main">
+				<div class="sub-main">
+					<div class="rot">
+						<h1> loading..</h1>
+					</div>
+				</div>
+			</div>
+    <body onload="myfu()">
 
-    <body onload="myfun()">
-		<div id="load">
-			
-		</div>
 
         <!-- Website Title -->
     	<div class="containe">
