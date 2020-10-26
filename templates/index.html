@@ -1,249 +1,274 @@
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>CardioVascular Disease Predictor</title>
-        <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}"> -->
-		<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> -->
+
+<head>
+	<meta charset="utf-8">
+	<title>CardioVascular Disease Predictor</title>
+	<!-- <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Permanent+Marker&family=Sansita+Swashed:wght@300&family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">   
-		
-        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    </head>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Permanent+Marker&family=Sansita+Swashed:wght@300&family=Ubuntu:ital,wght@1,500&display=swap"
+		rel="stylesheet">
 
-	<style>
-		html{
-	height: 100%;
-	margin: 0;
-}
+	<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
 
-body{
-	font-family: Arial, Helvetica,sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-/* Website Title */
-.containe{
-    padding: 30px;
-	position: relative;
-	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
-	background-size: 500% 500%;
-	animation: change-gradient 10s ease-in-out infinite;
-}
-@keyframes change-gradient {
-	0%{
-		background-position: 0 50%;
+<style>
+	html {
+		height: 100%;
+		margin: 0;
 	}
-	50%{
-		background-position: 100% 50%;
+
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
-	100%{
-		background-position: 0 50%;
+
+	/* Website Title */
+	.containe {
+		padding: 30px;
+		position: relative;
+		background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+		background-size: 500% 500%;
+		animation: change-gradient 10s ease-in-out infinite;
 	}
-}
 
-.container-heading{
-    margin: 0;
-}
+	@keyframes change-gradient {
+		0% {
+			background-position: 0 50%;
+		}
 
-.heading_font{
-	color: #ffffff;
-	font-family: 'Ubuntu', sans-serif;
-	/* font-family: 'Permanent Marker', cursive; */
-	font-size: 35px;
-	font-weight: normal;
-}
+		50% {
+			background-position: 100% 50%;
+		}
 
-.description p{
-	color: #ffffff;
-    font-style: italic;
-    font-size: 14px;
-    margin: -5px 0 0;
-}
+		100% {
+			background-position: 0 50%;
+		}
+	}
 
-/* Text Area */
-.ml-container{
-    margin: 30px 0;
-	flex: 1 0 auto;
-	/* background-color: turquoise; */
-	padding-top: 20px;
-}
+	.container-heading {
+		margin: 0;
+	}
 
-.form-input {
-	text-align: center;
-	width: 350px;
-	height: 25px;
-	margin-bottom: 5px;
-}
+	.heading_font {
+		color: #ffffff;
+		font-family: 'Ubuntu', sans-serif;
+		/* font-family: 'Permanent Marker', cursive; */
+		font-size: 35px;
+		font-weight: normal;
+	}
 
-/* Predict Button */
-.button{
-	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
-	animation: change-gradient 10s ease-in-out infinite;
-	color: white; font-weight: bold;
-}
+	.description p {
+		color: #ffffff;
+		font-style: italic;
+		font-size: 14px;
+		margin: -5px 0 0;
+	}
 
-.my-cta-button:hover{
-    color: #4d089a;
-    border: 2px solid #4d089a;
-}
+	/* Text Area */
+	.ml-container {
+		margin: 30px 0;
+		flex: 1 0 auto;
+		/* background-color: turquoise; */
+		padding-top: 20px;
+	}
 
-.my-cta-button:active{
-    box-shadow: 0 0;
-}
+	.form-input {
+		text-align: center;
+		width: 350px;
+		height: 25px;
+		margin-bottom: 5px;
+	}
 
-/* Contact */
-.contact-icon{
-	color: #ffffff;
-	padding: 7px;
-}
+	/* Predict Button */
+	.button {
+		/* background: linear-gradient(45deg, #443B96, #F60B68, #F4483A); */
+		background: linear-gradient(90deg, #020024 0%, #090979 35%);
+		animation: change-gradient 10s ease-in-out infinite;
+		color: white;
+		font-weight: bold;
+	}
 
-.contact-icon:hover{
-	color: #8c8c8c;
-}
+	.my-cta-button:hover {
+		color: #4d089a;
+		border: 2px solid #4d089a;
+	}
 
-/* Footer */
-.footer{
-	flex-shrink: 0;
-	position: relative;
-	padding: 20px;
-	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
-	background-size: 500% 500%;
-	animation: change-gradient 10s ease-in-out infinite;
-}
+	.my-cta-button:active {
+		box-shadow: 0 0;
+	}
 
-.footer-description{
-	color: #ffffff;
-	margin: 0;
-	font-size: 12px;
-}
+	/* Contact */
+	.contact-icon {
+		color: #ffffff;
+		padding: 7px;
+	}
 
-/* Result */
-.results{
-    padding: 30px 0 0;
-	flex: 1 0 auto;
-}
+	.contact-icon:hover {
+		color: #8c8c8c;
+	}
 
-.danger{
-    color: #ff0000;
-}
+	/* Footer */
+	.footer {
+		flex-shrink: 0;
+		position: relative;
+		padding: 20px;
+		/* background: linear-gradient(45deg, #443B96, #F60B68, #F4483A); */
+		background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+		background-size: 500% 500%;
+		animation: change-gradient 10s ease-in-out infinite;
+	}
 
-.safe{
-    color: green;
-}
+	.footer-description {
+		color: #ffffff;
+		margin: 0;
+		font-size: 12px;
+	}
 
-.gif{
-	width: 25%;
-}
+	/* Result */
+	.results {
+		padding: 30px 0 0;
+		flex: 1 0 auto;
+	}
 
-.gif1{
-	width: 35%;
-    	margin: 10px 0;
-}
-input{
+	.danger {
+		color: #ff0000;
+	}
+
+	.safe {
+		color: green;
+	}
+
+	.gif {
+		width: 25%;
+	}
+
+	.gif1 {
+		width: 35%;
+		margin: 10px 0;
+	}
+
+	input {
 		margin: 5px;
 		/* display: block; */
 		width: 25vw;
 		border-radius: 10px;
 		padding-left: 10px;
 	}
-	.main{
-		height: 100%; width: 100vw;
+
+	.main {
+		height: 100%;
+		width: 100vw;
 		background-color: black;
 		position: absolute;
 		z-index: 999;
-		display: grid; place-items: center;
+		display: grid;
+		place-items: center;
 	}
-	.sub-main{
-		height: 230px; width: 230px;
+
+	.sub-main {
+		height: 230px;
+		width: 230px;
 		background-color: black;
-		display: grid; place-items: center;
+		display: grid;
+		place-items: center;
 		border-right: 5px solid white;
 		border-left: 5px solid white;
 		border-radius: 50%;
 		animation: rot linear 3s infinite;
 	}
-	.rot{
+
+	.rot {
 		animation: rot1 linear 3s infinite;
 		color: white;
 		font-family: 'Ubuntu', sans-serif;
 	}
-	@keyframes rot1{
-		0%{
+
+	@keyframes rot1 {
+		0% {
 			transform: rotate(360deg);
 		}
-		100%{
+
+		100% {
 			transform: rotate(0deg);
 		}
 	}
-	@keyframes rot{
-		0%{
+
+	@keyframes rot {
+		0% {
 			transform: rotate(0deg);
 		}
-		100%{
+
+		100% {
 			transform: rotate(360deg);
 		}
 	}
-	</style>
-			<div id="load" class="main">
-				<div class="sub-main">
-					<div class="rot">
-						<h1> loading..</h1>
-					</div>
-				</div>
-			</div>
-    <body onload="myfun()">
-
-
-        <!-- Website Title -->
-    	<div class="containe">
-            <h2 class='container-heading'><span class="heading_font">Cardio Vascular Disease Predictor</span></h2>
-            <div class='description'>
-    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
-    		</div>
-    	</div>
-
-        <div class="ml-container">
-    		<form action="/" method="POST">
-                <input type="text" name="age" placeholder="Age in Days">
-						<input type="text" name="gender" placeholder="Gender (1 for male and 2 for female)"> <br>
-						<input type="text" name="height" placeholder="Height in cm">
-						<input type="text" name="weight" placeholder="Weight in Kg"><br>
-						<input type="text" name="ap_hi" placeholder="Systolic Blood Pressure in mm">
-						<input type="text" name="ap_lo" placeholder="Diastolic Blood Pressure in mm"><br>
-						<input type="text" name="cholesterol" placeholder="Cholesterol Level(eg- 1,2 or 3">
-						<input type="text" name="gluc" placeholder="Glucose Level(eg- 1,2 or 3)"><br>
-						<input type="text" name="smoke" placeholder="Smoking (1 for yes and 0 for no)">
-						<input type="text" name="alco" placeholder="Alcohol (0 for no and 1 for yes)"><br>
-						<input type="text" name="active" placeholder="Active (1 for yes and 0 for no)">
-						<input type="text" name="bmi" placeholder="BMI"><br>
-
-        		<input type="submit" class="button btn  btn-secondary" value="Predict">
-			</form>
+</style>
+<div id="load" class="main">
+	<div class="sub-main">
+		<div class="rot">
+			<h1> loading..</h1>
 		</div>
+	</div>
+</div>
 
-		<!-- Footer -->
-       <div class='footer'>
-           <div class="contact">
-               <a target="_blank" href="https://github.com/singhsivansh12"><i class="fab fa-github fa-lg contact-icon"></i></a>
-               <a target="_blank" href="https://www.linkedin.com/in/shivansh-singh-2a917966/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
-           </div>
-           <p class='footer-description'>Made by Shivansh Singh.</p>
-       </div>
+<body onload="myfun()">
 
-	</body>
-	<script>
-		var load = document.getElementById("load");
-		function myfun(){
-			load.style.display = "none";
-		}
-	</script>
+
+	<!-- Website Title -->
+	<div class="containe">
+		<h2 class='container-heading'><span class="heading_font">Cardio Vascular Disease Predictor</span></h2>
+		<div class='description'>
+			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+		</div>
+	</div>
+
+	<div class="ml-container">
+		<form action="/" method="POST">
+			<input type="text" name="age" placeholder="Age in Days">
+			<input type="text" name="gender" placeholder="Gender (1 for male and 2 for female)"> <br>
+			<input type="text" name="height" placeholder="Height in cm">
+			<input type="text" name="weight" placeholder="Weight in Kg"><br>
+			<input type="text" name="ap_hi" placeholder="Systolic Blood Pressure in mm">
+			<input type="text" name="ap_lo" placeholder="Diastolic Blood Pressure in mm"><br>
+			<input type="text" name="cholesterol" placeholder="Cholesterol Level(eg- 1,2 or 3">
+			<input type="text" name="gluc" placeholder="Glucose Level(eg- 1,2 or 3)"><br>
+			<input type="text" name="smoke" placeholder="Smoking (1 for yes and 0 for no)">
+			<input type="text" name="alco" placeholder="Alcohol (0 for no and 1 for yes)"><br>
+			<input type="text" name="active" placeholder="Active (1 for yes and 0 for no)">
+			<input type="text" name="bmi" placeholder="BMI"><br>
+
+			<input type="submit" class="button btn  btn-secondary" value="Predict">
+		</form>
+	</div>
+
+	<!-- Footer -->
+	<div class='footer'>
+		<div class="contact">
+			<a target="_blank" href="https://github.com/singhsivansh12"><i
+					class="fab fa-github fa-lg contact-icon"></i></a>
+			<a target="_blank" href="https://www.linkedin.com/in/shivansh-singh-2a917966/"><i
+					class="fab fa-linkedin fa-lg contact-icon"></i></a>
+		</div>
+		<p class='footer-description'>Made by Shivansh Singh.</p>
+	</div>
+
+</body>
+<script>
+	var load = document.getElementById("load");
+	function myfun() {
+		load.style.display = "none";
+	}
+</script>
+
 </html>
