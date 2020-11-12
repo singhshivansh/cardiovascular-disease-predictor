@@ -1,5 +1,5 @@
 # Cardio-Vascular Disease Predictor
-[Live Website](cardiovascular-predictor.herokuapp.com/ "Live Website")
+[Live Website](https://cardiovascular-predictor.herokuapp.com/ "Live Website")
 
 ![alt text](https://github.com/singhsivansh12/cardiovascular-disease-predictor/blob/master/templates/cardiovascular.png "Screen Shot of Website")
 
